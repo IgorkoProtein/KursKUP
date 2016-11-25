@@ -4,7 +4,7 @@ void theatre::getFFPerf(string path) {
 	ifstream pr(path);
 	perform tempPr;
 	char* Buffer = new char[2000];
-	char* ptr;// = new char[];
+	char* ptr;
 	int i = 0;
 
 	Performs.clear();

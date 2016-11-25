@@ -45,6 +45,7 @@ void perform::setDuration() {
 	duration = n;
 }
 void perform::setTime(string t) {
+	
 	string buffer;
 
 	buffer = t.substr(0, 2);
@@ -110,8 +111,8 @@ void perform::setTime() {
 	}
 	else {
 		if ((startTimeM + duration) > 59) {
+			endTimeH++;
 			endTimeM = startTimeM + duration - 60;
-			endTimeH = startTimeH + 1;
 		}
 		else {
 			endTimeM = startTimeM + duration;

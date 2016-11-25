@@ -27,7 +27,6 @@ public:
 	void setDuration(string);
 	void setTime();
 	void setTime(string);
-	//void setEndTime();
 	void setDay();
 	void setDay(string);
 
@@ -41,8 +40,9 @@ public:
 	string getName();
 	int getDuration();
 	string getStartTime();
-	day getDay();
 	string getEndTime();
+	day getDay();
+	
 
 };
 
