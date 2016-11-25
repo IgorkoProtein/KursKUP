@@ -3,23 +3,27 @@
 perform::perform() {
 	name = "";
 	duration = 0;
-	startTime = 0;
-	endTime = startTime + duration;
+	startTimeH = 0;
+	startTimeM = 0;
+	endTimeH = 0;
+	endTimeM = 0;
 	dayP = monday;
 }
 
-perform::perform(string nm, int dur, int st, day d) {
+perform::perform(string nm, int dur, int stH, int stM, int endH, int endM, day d) {
 	name = nm;
 	duration = dur;
-	startTime = st;
-	endTime = startTime + duration;
+	startTimeH = stH;
+	startTimeM = stM;
+	endTimeH = endH;
+	endTimeM = endM;
 	dayP = d;
 }
 void perform::setName(string nm) {
 	name = nm;
 }
 void perform::setName() {
-	cout << "Enter name of perfomance :";
+	cout << "Введіть назву вистави :";
 	cin >> name;
 }
 void perform::setDuration(string dr) {
@@ -29,35 +33,92 @@ void perform::setDuration() {
 	int n;
 	while (true)
 	{
-		cout << "Enter duration of perfomance :";
-		cin>>n;
-		if(!cin){
-			cout<<"Error, enter new numbers "<<endl;
+		cout << "Введіть тривалість вистави у хвилинах:";
+		cin >> n;
+		if (!cin) {
+			cout << "Недопустимі символи для задання тривалості " << endl;
 			cin.clear();
-			while(cin.get() !='\n');
+			while (cin.get() != '\n');
 		}
 		else break;
 	}
 	duration = n;
 }
 void perform::setTime(string t) {
-	startTime = stoi(t);
+	string buffer;
+
+	buffer = t.substr(0, 2);
+	startTimeH = stoi(buffer);
+	buffer = t.substr(2, 2);
+	startTimeM = stoi(buffer);
+
+	if (duration > 59) {
+		endTimeH = startTimeH + duration / 60;
+		endTimeM = startTimeM + duration % 60;
+		if (endTimeM > 59) {
+			endTimeH++;
+			endTimeM = endTimeM - 60;
+		}
+	}
+	else {
+		if ((startTimeM + duration) > 59) {
+			endTimeM = startTimeM + duration - 60;
+			endTimeH = startTimeH + 1;
+		}
+		else {
+			endTimeM = startTimeM + duration;
+			endTimeH = startTimeH;
+		}
+	}
 }
 void perform::setTime() {
-	int n;
-	while (true)
-	{
-		cout << "Enter start time of perfomance :";
-		cin>>n;
-		if(!cin){
-			cout<<"Error, enter new numbers "<<endl;
+	int h, m;
+	while (true) {
+		cout << "Введіть час початку вистави(гг:хх):";
+		cout << "год: ";
+		cin >> h;
+		cout << "хв:";
+		cin >> m;
+		if (!cin) {
+			cout << "Недопустимі символи для задання часу " << endl;
 			cin.clear();
-			while(cin.get() !='\n');
+			while (cin.get() != '\n');
 		}
-		else break;
+		else {
+			if (h < 0 || h>24) {
+				cout << "Недопустимий формат введення години!!!" << endl;
+				cout << "Допустимий діапазон [0-24]" << endl;
+			}
+			else if (m < 0 || m>59) {
+				cout << "Недопустимий формат введення хвилин!!!" << endl;
+				cout << "Допустимий діапазон [0-59]" << endl;
+			}
+			else {
+				break;
+			}
+		}
 	}
-	startTime = n;
-	endTime = startTime + duration;
+	startTimeH = h;
+	startTimeM = m;
+	if (duration > 59) {
+		endTimeH = startTimeH + duration / 60;
+		endTimeM = startTimeM + duration % 60;
+		if (endTimeM > 59) {
+			endTimeH++;
+			endTimeM = endTimeM - 60;
+		}
+	}
+	else {
+		if ((startTimeM + duration) > 59) {
+			endTimeM = startTimeM + duration - 60;
+			endTimeH = startTimeH + 1;
+		}
+		else {
+			endTimeM = startTimeM + duration;
+			endTimeH = startTimeH;
+		}
+	}
+
 }
 void perform::setDay(string day) {
 	switch (stoi(day))
@@ -78,14 +139,13 @@ void perform::setDay() {
 		cout << "Введіть номер дня (monday - 1, thuesday - 2 ... sunday - 7):";
 		cin >> d;
 		if (!cin || d > 7 || d < 1) {
-			cout << "Не";
+			cout << "Не вірний номер дня";
 		}
 		else {
 			break;
 		}
-
 	} while (true);
-	
+
 	switch (d)
 	{
 	case 1: dayP = monday; break;
@@ -94,33 +154,44 @@ void perform::setDay() {
 	case 4: dayP = thursday; break;
 	case 5: dayP = friday; break;
 	case 6: dayP = saturday; break;
-	case 7: dayP = sunday; break; 
-	
+	case 7: dayP = sunday; break;
 	}
 }
-void perform::setEndTime() {
-	endTime = startTime + duration;
-}
+//void perform::setEndTime() {
+//	if (duration > 59) {
+//		endTimeH = startTimeH + duration / 60;
+//		endTimeM = startTimeM + duration % 60;
+//	}
+//	else {
+//		if ((startTimeM + duration) > 59) {
+//			endTimeM = startTimeM + duration - 60;
+//			endTimeH = startTimeH + 1;
+//		}
+//		else {
+//			endTimeM = startTimeM + duration;
+//			endTimeH = startTimeH;
+//		}
+//	}
+//}
 
-void perform::showName(){
+void perform::showName() {
 	cout << name << endl;
 }
 
 void perform::show() {
-	cout << endl;
-	cout << "Performens name: " << name << endl;
-	cout << "Duration: " << duration << endl;
-	cout << "Start time: " << startTime << endl;
-	cout << "End time: " << endTime << endl;
-
+	cout << "##################################" << endl;
+	cout << "Вистава : " << name << endl;
+	cout << "Тривалість (хв) : " << duration << endl;
+	cout << "Час початку : " << startTimeH << ":";
+	if (startTimeM == 0) cout << "00" << endl; else cout << startTimeM << endl;
+	cout << "Час закінчення вистави: " << endTimeH << ":";
+	if (endTimeM == 0) cout << "00" << endl; else cout << endTimeM << endl;
 	for (int i = 0; i < 3; i++)
 	{
-		cout << "Actor[" << i + 1<<"] " << currrentActors[i].getName() << " " << currrentActors[i].getSurName() << endl;
-		cout << "His pseudonym is: " << currrentActors[i].getPseudonym() << endl << endl;
+		cout << "Актор [" << i + 1 << "] ";
+		currrentActors[i].Show();
 	}
-	cout << endl;
 }
-
 
 string perform::getName() {
 	return name;
@@ -129,16 +200,34 @@ string perform::getName() {
 int perform::getDuration() {
 	return duration;
 }
-int perform::getTime() {
-	return startTime;
+string perform::getStartTime() {
+	string temp;
+	char hh[20];
+	char mm[20];
+	itoa(startTimeH, hh, 10);
+	itoa(startTimeM, mm, 10);
+
+	temp.insert(0, hh);
+	temp.insert(2, mm);
+
+	return temp;
 }
 day perform::getDay() {
 	return dayP;
 }
 
-int perform::getEndTime(){
-	endTime = startTime + duration;
-	return endTime;
+string perform::getEndTime() {
+
+	string temp;
+	char hh[2];
+	char mm[2];
+	itoa(endTimeH, hh, 10);
+	itoa(endTimeM, mm, 10);
+
+	temp.insert(0, hh);
+	temp.insert(2, mm);
+
+	return temp;
 }
 
 void perform::AddActor(vector<actor>&AC) {
@@ -148,13 +237,13 @@ void perform::AddActor(vector<actor>&AC) {
 	bool writeAcc = true;
 
 	for (int i = 0; i < AC.size(); i++) {
-		cout << "Actor ID [" << i << "]" << endl;
+		cout << "ID Актора [" << i << "]" << endl;
 		AC[i].Show();
 	}
 
 	do
 	{
-		cout << "Please choise actor "<<k<< " by ID:";
+		cout << "Виберіть " << k << " через ID:";
 		cin >> choise;
 		for (int i = 0; i < size; i++)
 		{
@@ -173,10 +262,9 @@ void perform::AddActor(vector<actor>&AC) {
 			k++;
 		}
 		else {
-			cout << "This actor was added, choise another" << endl;
+			cout << "Цей актор уже бере учатсь у виставі" << endl;
 		}
-		
-	} while (k<=3);
+	} while (k <= 3);
 
 }
 

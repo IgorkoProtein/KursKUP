@@ -6,20 +6,20 @@
 
 using namespace std;
 
-enum day{monday = 1, thuesday, wednesday, thursday, friday, saturday, sunday};
+enum day { monday = 1, thuesday, wednesday, thursday, friday, saturday, sunday };
 
-class perform{
+class perform {
 	string name;
 	int duration;
-	int startTime;
 	int startTimeH;
 	int startTimeM;
-	int endTime;
+	int endTimeH;
+	int endTimeM;
 	day dayP;
 public:
 	vector<actor> currrentActors;
 	perform();
-	perform(string, int, int, day);
+	perform(string, int, int, int, int,int, day);
 
 	void setName();
 	void setName(string);
@@ -27,22 +27,22 @@ public:
 	void setDuration(string);
 	void setTime();
 	void setTime(string);
-	void setEndTime();
+	//void setEndTime();
 	void setDay();
 	void setDay(string);
-	
+
 	void AddActor(vector<actor>&);
-	void setActorName(string,int);
-	void setActorSurname(string,int);
-	void setActorPseudonym(string,int);
+	void setActorName(string, int);
+	void setActorSurname(string, int);
+	void setActorPseudonym(string, int);
 	void showName();
 	void show();
 
 	string getName();
 	int getDuration();
-	int getTime();
+	string getStartTime();
 	day getDay();
-	int getEndTime();
+	string getEndTime();
 
 };
 

@@ -53,5 +53,5 @@ string actor::getPseudonym(){
 
 void actor::Show(){
 	cout << "јктор: " << surName << " " << name << endl;
-	cout << "ѕсевдон≥м: " << pseudonym << endl << endl;
+	cout << "ѕсевдон≥м: " << pseudonym << endl;
 }

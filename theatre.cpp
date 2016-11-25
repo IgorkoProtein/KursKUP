@@ -40,7 +40,6 @@ void theatre::getFFPerf(string path) {
 				ptr = strtok(NULL, ",");
 				i++;
 			}
-			tempPr.setEndTime();
 			Performs.push_back(tempPr);
 		}
 	}
@@ -62,7 +61,7 @@ void theatre::addPerform(string path) {
 	ofstream Prf(path, ios_base::app);
 	Prf << "\n" << temp.getName() << ",";
 	Prf << temp.getDuration() << ",";
-	Prf << temp.getTime() << ",";
+	Prf << temp.getStartTime() << ",";
 	Prf << temp.getDay() << ",";
 	for (int i = 0; i < temp.currrentActors.size(); i++)
 	{
@@ -196,7 +195,7 @@ void theatre::detetePerform(string road) {
 		{
 			actWrite << Performs[i].getName() << ",";
 			actWrite << Performs[i].getDuration() << ",";
-			actWrite << Performs[i].getTime() << ",";
+			actWrite << Performs[i].getStartTime() << ",";
 			actWrite << Performs[i].getDay() << ",";
 			actWrite << Performs[i].getEndTime() << ",";
 			actWrite << Performs[i].currrentActors[i].getName() << ",";

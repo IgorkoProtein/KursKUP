@@ -1,27 +1,12 @@
-﻿  theatre.cpp
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(19): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(40): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(67): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(97): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(108): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(139): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(148): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(154): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(180): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(189): warning C4018: >: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\theatre.cpp(195): warning C4018: <: несоответствие типов со знаком и без знака
-  rozklad.cpp
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\rozklad.cpp(39): warning C4018: <: несоответствие типов со знаком и без знака
-  perform.cpp
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(150): warning C4018: <: несоответствие типов со знаком и без знака
-  menu.cpp
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\menu.cpp(85): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\menu.cpp(120): warning C4018: <: несоответствие типов со знаком и без знака
-  actor.cpp
-  Создание кода...
+﻿  perform.cpp
+c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(207): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note:  см. объявление "itoa"
+c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(208): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note:  см. объявление "itoa"
+c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(224): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note:  см. объявление "itoa"
+c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(225): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note:  см. объявление "itoa"
+c:\users\nazarmykhailiv\documents\visual studio 2015\projects\kurskup\kurs\perform.cpp(239): warning C4018: <: несоответствие типов со знаком и без знака
   Kurs.vcxproj -> C:\Users\NazarMykhailiv\Documents\Visual Studio 2015\Projects\KursKup\Debug\Kurs.exe
   Kurs.vcxproj -> C:\Users\NazarMykhailiv\Documents\Visual Studio 2015\Projects\KursKup\Debug\Kurs.pdb (Full PDB)
