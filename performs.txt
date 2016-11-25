@@ -1,0 +1,5 @@
+Вистава 1,45,1450,1,Oleg,Stupka,Sirko,Leonardo,Dikaprio,Oskar,Tom,Hardy,KickMaster
+Вистава 2,120,1600,7,Oleg,Stupka,Sirko,Leonardo,Dikaprio,Oskar,Tom,Hardy,KickMaster
+Вистава 3,75,1900,6,Oleg,Stupka,Sirko,Leonardo,Dikaprio,Oskar,Tom,Hardy,KickMaster
+Тест1,40,1400,7,Oleg,Stupka,Sirko,Leonardo,Dikaprio,Oskar,Tom,Hardy,KickMaster
+Test4,34,1400,2,Кіано,Рівз,адвокат,Леонардо,Дікапріо,Оскар,Леонардо,Дікапріо,Оскар
