@@ -12,6 +12,8 @@ class perform{
 	string name;
 	int duration;
 	int startTime;
+	int startTimeH;
+	int startTimeM;
 	int endTime;
 	day dayP;
 public:
